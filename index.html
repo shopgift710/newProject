@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Story ❤️</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Intro Screen -->
+    <div id="intro">
+        <h1>Hey You ❤️</h1>
+        <button id="startBtn">Let’s Begin</button>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="hidden">
+
+        <!-- Section 1: Memory Lane -->
+        <section class="section">
+            <h2>Memory Lane 📸</h2>
+            <div class="cards">
+
+                <div class="card">
+                    <img src="files/memory1.jpg" alt="Memory 1">
+                    <div class="card-content">
+                        <h3>Our First Smile</h3>
+                        <button onclick="openStory(1)">View Story</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="files/memory2.jpg" alt="Memory 2">
+                    <div class="card-content">
+                        <h3>That Special Day</h3>
+                        <button onclick="openStory(2)">View Story</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="files/memory3.jpg" alt="Memory 3">
+                    <div class="card-content">
+                        <h3>Our Adventure</h3>
+                        <button onclick="openStory(3)">View Story</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 2: Puzzle -->
+        <section class="section">
+            <h2>Little Puzzle 🧩</h2>
+            <div id="puzzle">
+                <button class="puzzle-piece">❤️</button>
+                <button class="puzzle-piece">❤️</button>
+                <button class="puzzle-piece">❤️</button>
+                <button class="puzzle-piece">❤️</button>
+            </div>
+        </section>
+
+        <!-- Section 3: Question -->
+        <section class="section">
+            <h2>One Important Question 💌</h2>
+            <div class="question-box">
+                <p>Will you be my Valentine?</p>
+                <button id="yesBtn">Yes 💖</button>
+                <button id="noBtn">No 😢</button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Story Modal -->
+    <div id="storyModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeStory()">&times;</span>
+            <div id="storyContent"></div>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
