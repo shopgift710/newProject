@@ -1,48 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Story ❤️</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Journey</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <!-- Intro Screen -->
-    <div id="intro">
-        <h1>Hey You ❤️</h1>
-        <button id="startBtn">Let’s Begin</button>
+    <div id="intro-screen" class="intro-screen">
+        <div class="intro-content">
+            <h1 class="intro-title">A Special Journey</h1>
+            <p class="intro-subtitle">For Someone Special ❤️</p>
+            <button id="begin-btn" class="begin-btn">Let's Begin</button>
+        </div>
     </div>
 
     <!-- Main Content -->
-    <div id="mainContent" class="hidden">
-
+    <div id="main-content" class="main-content hidden">
+        
         <!-- Section 1: Memory Lane -->
-        <section class="section">
-            <h2>Memory Lane 📸</h2>
-            <div class="cards">
-
-                <div class="card">
-                    <img src="files/memory1.jpg" alt="Memory 1">
-                    <div class="card-content">
-                        <h3>Our First Smile</h3>
-                        <button onclick="openStory(1)">View Story</button>
+        <section id="memory-lane" class="section memory-lane-section">
+            <h2 class="section-title">Memory Lane</h2>
+            <div class="cue-cards-container">
+                
+                <!-- Cue Card 1 -->
+                <div class="cue-card" data-card="1">
+                    <div class="cue-card-image">
+                        <img src="files/memory1.jpg" alt="Memory 1">
+                    </div>
+                    <div class="cue-card-content">
+                        <h3 class="cue-card-title">First Moments</h3>
+                        <button class="cue-card-btn" data-modal="modal1">View Story</button>
                     </div>
                 </div>
 
-                <div class="card">
-                    <img src="files/memory2.jpg" alt="Memory 2">
-                    <div class="card-content">
-                        <h3>That Special Day</h3>
-                        <button onclick="openStory(2)">View Story</button>
+                <!-- Cue Card 2 -->
+                <div class="cue-card" data-card="2">
+                    <div class="cue-card-image">
+                        <img src="files/memory2.jpg" alt="Memory 2">
+                    </div>
+                    <div class="cue-card-content">
+                        <h3 class="cue-card-title">Beautiful Times</h3>
+                        <button class="cue-card-btn" data-modal="modal2">View Story</button>
                     </div>
                 </div>
 
-                <div class="card">
-                    <img src="files/memory3.jpg" alt="Memory 3">
-                    <div class="card-content">
-                        <h3>Our Adventure</h3>
-                        <button onclick="openStory(3)">View Story</button>
+                <!-- Cue Card 3 -->
+                <div class="cue-card" data-card="3">
+                    <div class="cue-card-image">
+                        <img src="files/memory3.jpg" alt="Memory 3">
+                    </div>
+                    <div class="cue-card-content">
+                        <h3 class="cue-card-title">Forever Memories</h3>
+                        <button class="cue-card-btn" data-modal="modal3">View Story</button>
+                    </div>
+                </div>
+
+                <!-- Cue Card 4 -->
+                <div class="cue-card" data-card="4">
+                    <div class="cue-card-image">
+                        <img src="files/memory4.jpg" alt="Memory 4">
+                    </div>
+                    <div class="cue-card-content">
+                        <h3 class="cue-card-title">Special Moments</h3>
+                        <button class="cue-card-btn" data-modal="modal4">View Story</button>
+                    </div>
+                </div>
+
+                <!-- Cue Card 5 -->
+                <div class="cue-card" data-card="5">
+                    <div class="cue-card-image">
+                        <img src="files/memory5.jpg" alt="Memory 5">
+                    </div>
+                    <div class="cue-card-content">
+                        <h3 class="cue-card-title">Cherished Days</h3>
+                        <button class="cue-card-btn" data-modal="modal5">View Story</button>
+                    </div>
+                </div>
+
+                <!-- Cue Card 6 -->
+                <div class="cue-card" data-card="6">
+                    <div class="cue-card-image">
+                        <img src="files/memory6.jpg" alt="Memory 6">
+                    </div>
+                    <div class="cue-card-content">
+                        <h3 class="cue-card-title">Precious Times</h3>
+                        <button class="cue-card-btn" data-modal="modal6">View Story</button>
+                    </div>
+                </div>
+
+                <!-- Cue Card 7 -->
+                <div class="cue-card" data-card="7">
+                    <div class="cue-card-image">
+                        <img src="files/memory7.jpg" alt="Memory 7">
+                    </div>
+                    <div class="cue-card-content">
+                        <h3 class="cue-card-title">Endless Love</h3>
+                        <button class="cue-card-btn" data-modal="modal7">View Story</button>
                     </div>
                 </div>
 
@@ -50,39 +105,174 @@
         </section>
 
         <!-- Section 2: Puzzle -->
-        <section class="section">
-            <h2>Little Puzzle 🧩</h2>
-            <div id="puzzle">
-                <button class="puzzle-piece">❤️</button>
-                <button class="puzzle-piece">❤️</button>
-                <button class="puzzle-piece">❤️</button>
-                <button class="puzzle-piece">❤️</button>
+        <section id="puzzle" class="section puzzle-section">
+            <h2 class="section-title">Solve Our Puzzle</h2>
+            <div class="puzzle-container">
+                <div class="puzzle-grid" id="puzzle-grid">
+                    <!-- Puzzle pieces will be generated by JavaScript -->
+                </div>
             </div>
         </section>
 
-        <!-- Section 3: Question -->
-        <section class="section">
-            <h2>One Important Question 💌</h2>
-            <div class="question-box">
-                <p>Will you be my Valentine?</p>
-                <button id="yesBtn">Yes 💖</button>
-                <button id="noBtn">No 😢</button>
+        <!-- Section 3: The Question -->
+        <section id="question" class="section question-section">
+            <h2 class="section-title">One Important Question</h2>
+            <div class="question-container">
+                <h3 class="question-text">Will you be my Valentine? 💕</h3>
+                <div class="buttons-container">
+                    <button id="yes-btn" class="answer-btn yes-btn">Yes! ❤️</button>
+                    <button id="no-btn" class="answer-btn no-btn">No</button>
+                </div>
             </div>
         </section>
 
     </div>
 
-    <!-- Story Modal -->
-    <div id="storyModal" class="modal hidden">
+    <!-- Modal for Memory Stories -->
+    <div id="modal1" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeStory()">&times;</span>
-            <div id="storyContent"></div>
+            <button class="close-modal">&times;</button>
+            <div class="story-container">
+                <div class="story-item">
+                    <img src="files/story1-1.jpg" alt="Story 1 Image 1">
+                    <p class="story-text">The day we first met, I knew there was something special about you...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story1-2.jpg" alt="Story 1 Image 2">
+                    <p class="story-text">Every moment with you feels like a dream come true...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story1-3.jpg" alt="Story 1 Image 3">
+                    <p class="story-text">You make every day brighter with your smile...</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Confetti Canvas -->
-    <canvas id="confettiCanvas"></canvas>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="story-container">
+                <div class="story-item">
+                    <img src="files/story2-1.jpg" alt="Story 2 Image 1">
+                    <p class="story-text">Our adventures together have been unforgettable...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story2-2.jpg" alt="Story 2 Image 2">
+                    <p class="story-text">From sunrise to sunset, every moment is precious...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story2-3.jpg" alt="Story 2 Image 3">
+                    <p class="story-text">Together we've created memories that will last forever...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="story-container">
+                <div class="story-item">
+                    <img src="files/story3-1.jpg" alt="Story 3 Image 1">
+                    <p class="story-text">Looking forward to all the memories we'll create...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story3-2.jpg" alt="Story 3 Image 2">
+                    <p class="story-text">Every day with you is a new adventure...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story3-3.jpg" alt="Story 3 Image 3">
+                    <p class="story-text">Here's to forever and always...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="story-container">
+                <div class="story-item">
+                    <img src="files/story4-1.jpg" alt="Story 4 Image 1">
+                    <p class="story-text">The laughter we share makes everything better...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story4-2.jpg" alt="Story 4 Image 2">
+                    <p class="story-text">Your presence brings warmth to my heart...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story4-3.jpg" alt="Story 4 Image 3">
+                    <p class="story-text">Together, we create magic in every moment...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="story-container">
+                <div class="story-item">
+                    <img src="files/story5-1.jpg" alt="Story 5 Image 1">
+                    <p class="story-text">The way you understand me is truly special...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story5-2.jpg" alt="Story 5 Image 2">
+                    <p class="story-text">With you, I've found my happy place...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story5-3.jpg" alt="Story 5 Image 3">
+                    <p class="story-text">You make ordinary days extraordinary...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="story-container">
+                <div class="story-item">
+                    <img src="files/story6-1.jpg" alt="Story 6 Image 1">
+                    <p class="story-text">Your kindness touches my soul deeply...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story6-2.jpg" alt="Story 6 Image 2">
+                    <p class="story-text">Every conversation with you is a treasure...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story6-3.jpg" alt="Story 6 Image 3">
+                    <p class="story-text">You inspire me to be my best self...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="story-container">
+                <div class="story-item">
+                    <img src="files/story7-1.jpg" alt="Story 7 Image 1">
+                    <p class="story-text">My love for you grows stronger each day...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story7-2.jpg" alt="Story 7 Image 2">
+                    <p class="story-text">You are my today and all of my tomorrows...</p>
+                </div>
+                <div class="story-item">
+                    <img src="files/story7-3.jpg" alt="Story 7 Image 3">
+                    <p class="story-text">Forever grateful to have you in my life...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <canvas id="confetti-canvas"></canvas>
 
     <script src="script.js"></script>
 </body>
 </html>
+
